@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.machine.f4932vend.MainActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="F4932 Vend Tool"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Connection card -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:text="Connection" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:id="@+id/spPort"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/btnRefreshPorts"
+                        android:text="↻"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"/>
+                    <EditText
+                        android:id="@+id/etBaud"
+                        android:text="38400"
+                        android:inputType="number"
+                        android:layout_width="96dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                    <Button
+                        android:id="@+id/btnOpen"
+                        android:text="Open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                    <Button
+                        android:id="@+id/btnClose"
+                        android:text="Close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Quick Queries -->
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel"
+                android:padding="12dp" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Quick Queries" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@+id/btnB" android:text="B 支付信息"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <Button android:id="@+id/btnC" android:text="C 货道信息"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnD" android:text="D 温度"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@+id/btnE" android:text="E 按键"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"/>
+                    <Button android:id="@+id/btnF" android:text="F 其它"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnG" android:text="G 余额"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnJ" android:text="J 清余额"
+                        android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Select & Vend -->
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel"
+                android:padding="12dp" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Select and Vend" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@+id/etSlot" android:hint="货道" android:inputType="number"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnSelect" android:text="H 选货"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnOK" android:text="H 确定"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"/>
+                    <Button android:id="@+id/btnCancel" android:text="H 取消"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@+id/etPrice" android:hint="价格(如0.01)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <EditText android:id="@+id/etPayMode" android:hint="支付(1/11/13/15/16)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <EditText android:id="@+id/etCard" android:hint="卡号/提货码(可空)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnShip" android:text="A 出货"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <Button android:id="@+id/btnVend_1_8888" android:text="一键出货 1 @ ¥88.88 (16)"
+                    android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- System I/O & Environment -->
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel"
+                android:padding="12dp" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="System I/O and Environment" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@+id/etITime" android:hint="I 时间码(如490)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnI" android:text="I 重新计时"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <EditText android:id="@+id/etKAmount" android:hint="K 退币金额"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnK" android:text="K 退币"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@+id/etL" android:hint="L 信号(0-30)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnL" android:text="L 上线"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnLightOn" android:text="M 开灯"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnLightOff" android:text="M 关灯"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@+id/btnCool" android:text="N 制冷"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnHeat" android:text="N 加热"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnStop" android:text="N 停机"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Menus (O/P) -->
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel"
+                android:padding="12dp" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Menus (O / P)" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:id="@+id/etOMenu" android:hint="O 菜单号"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnO" android:text="O 读取"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <EditText android:id="@+id/etPMenu" android:hint="P 菜单号"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <EditText android:id="@+id/etPData" android:hint="P 数据"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                    <Button android:id="@+id/btnP" android:text="P 写入"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Quick Setup & Console -->
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_panel"
+                android:padding="12dp" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:text="Quick Setup" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <LinearLayout android:orientation="horizontal" android:layout_marginTop="8dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@+id/btnSetupVend" android:text="开启 App/遥控出货 (26/39)"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+                    <Button android:id="@+id/btnCheckVendFlags" android:text="查询 26/39"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <TextView android:text="Console" android:textStyle="bold" android:textSize="15sp"
+                    android:layout_marginTop="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvLog"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="220dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_log"
+                    android:padding="12dp"
+                    android:textColor="#EEEEEE"
+                    android:textSize="12sp"
+                    android:scrollbars="vertical"
+                    android:textIsSelectable="true" />
+
+                <Button
+                    android:id="@+id/btnClear"
+                    android:text="清除日志"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <Space android:layout_width="match_parent" android:layout_height="12dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
