@@ -1,4 +1,4 @@
-# Octopus Cards Tech Machine3 Vending Machine Controller
+# SerialPort-for-F4932
 
 This project provides an Android application to control and interact with a vending machine via serial port communication.
 
